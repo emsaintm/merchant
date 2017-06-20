@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Products</h1>
+<h2><%= link_to 'New Product', new_admin_product_path, class: 'btn btn-info btn-sm' %>
+</h2>
 
-<table>
+<table class="table table-striped table-hover table-bordered">
   <thead>
     <tr>
       <th>Name</th>
@@ -18,8 +20,9 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
+        <td><%= image_tag product.avatar.url(:thumb) %>
         <td><%= product.name %></td>
-        <td><%= product.price %></td>
+        <td><%= number_to_currency(product.price) %></td>
         <td><%= product.quantity %></td>
         <td><%= product.description %></td>
         <td><%= product.brand %></td>
@@ -34,4 +37,4 @@
 
 <br>
 
-<%= link_to 'New Product', new_admin_product_path %>
+<%= link_to 'New Product', new_admin_product_path, class: 'btn btn-info btn-sm' %>
