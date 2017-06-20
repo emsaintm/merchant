@@ -5,8 +5,8 @@ class Product < ApplicationRecord
 
   validates :name, presence: true, length: {minimum: 2}
   validates_uniqueness_of :name, scope: :brand_id
-  validates :price, numericality: true 
-  validates :quantity, numericality: {only_integer: true}
+  validates_numericality_of :price, greater_than_or_equal_to: 0.01
+  validates_numericality_of :quantity, greater_than_or_equal_to: 0, less_than_or_equal_to: 999
   validates :description, presence: true
   validates :brand, :category, presence: true
   
