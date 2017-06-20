@@ -7,6 +7,7 @@
 <table class="table table-striped table-hover table-bordered">
   <thead>
     <tr>
+      <th>Photo</th>
       <th>Name</th>
       <th>Price</th>
       <th>Quantity</th>
@@ -25,8 +26,8 @@
         <td><%= number_to_currency(product.price) %></td>
         <td><%= product.quantity %></td>
         <td><%= product.description %></td>
-        <td><%= product.brand %></td>
-        <td><%= product.category %></td>
+        <td><%= product.brand.name %></td>
+        <td><%= product.category.name %></td>
         <td><%= link_to 'Show', admin_product_path(product) %></td>
         <td><%= link_to 'Edit', edit_admin_product_path(product) %></td>
         <td><%= link_to 'Destroy', admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %></td>
