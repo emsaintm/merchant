@@ -17,6 +17,15 @@ class Product < ApplicationRecord
 
   has_attached_file :avatar, styles: { medium: '300x300', thumb: '100x100>'}, default_url: "missing_:style.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
+def self.search_by_name_or_description(search_term)
+  where("name LIKE ? OR description LIKE ?", "%#{search_term}%", "%#{search_term}%")
+
+end
+
+  
+
+
 end
 
 # == Schema Information
