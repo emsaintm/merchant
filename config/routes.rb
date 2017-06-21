@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get '/shop' => 'storefront#index'
+
+  get  '/about' => 'storefront#about'
+
   devise_for :users
   namespace :admin do
     resources :products
@@ -8,7 +12,7 @@ Rails.application.routes.draw do
 
   end
 
-  root 'admin/products#index'
+  root 'storefront#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
