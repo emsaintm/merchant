@@ -1,6 +1,9 @@
 class Product < ApplicationRecord
   belongs_to :brand
   belongs_to :category
+  has_many :line_items
+  before_destroy :did_anyone_buy_this_thing?
+
 
 
   validates :name, presence: true, length: {minimum: 2}
@@ -23,9 +26,22 @@ def self.search_by_name_or_description(search_term)
 
 end
 
-  
 
 
+
+private
+# Make sure no one bought this product before we toss it
+# If you toss a product that someone bought, their order history will be 
+
+def did_anyone_buy_this_thing?
+  if line_items.empty?
+    return true 
+  else
+    errors.add(:base, 'Line Items Present')
+    return false
+
+    end
+  end
 end
 
 # == Schema Information
