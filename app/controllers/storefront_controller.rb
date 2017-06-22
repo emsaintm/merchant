@@ -13,7 +13,8 @@ class StorefrontController < ApplicationController
       @category = Category.find(params[:cat_id])
       @products = Product.where(category_id: params[:cat_id])
     else 
-      @products = Product.all 
+      @products = Product.paginate(:page => params[:page], :per_page => 2)
+
   end
    end
 

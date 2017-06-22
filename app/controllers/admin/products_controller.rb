@@ -5,8 +5,18 @@ class Admin::ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+
+
+    if params[:search]
+      @products = Product.search_by_name_or_description(params[:search])
+      if @products.empty?
+        flash.now[:notice] = "Nothing found for \"#{params[:search]}\", showing all products"
+        @products = Product.all 
+      end
+      else
     @products = Product.all
   end
+end
 
   # GET /products/1
   # GET /products/1.json
