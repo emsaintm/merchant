@@ -36,7 +36,7 @@
   <% @products.each do |product| %>
     <div class="col-sm-4">
       <div class="panel panel-default">
-        <div class="panel-body">
+        <div class="panel-body" style="max-height: 10">
           <%= image_tag product.avatar.url(:medium) %>
           <span class="pull-right text-right">
             <h5><%= product.price %></h5>
