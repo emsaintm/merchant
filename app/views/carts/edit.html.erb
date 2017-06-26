@@ -16,7 +16,7 @@
   <tbody>
     <% @cart.line_items.each do |item| %>
       <tr>
-        <td><%= image_tag product.avatar.url(:thumb) %></td>
+        <td><%= image_tag line_item.avatar.url(:thumb) %>
         <td><%= item.product.name %></td>
         <td><%= item.quantity %> &time;</td>
         <td><%= number_to_currency(item.price) %></td>
