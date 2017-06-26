@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
- 
 
   get '/shop' => 'storefront#index'
 
@@ -20,8 +19,7 @@ Rails.application.routes.draw do
  # resources gives you seven routes, resource gives you six.  difference is the index view
  #resources: index, new, create, edit, update, destroy, show
 #resource: new, create, edit, update, destroy, show
-
- resources :line_items, only: [:create]
+ resources :line_items, only: [:create, :destroy]
  resources :orders, only: [:new, :create, :show]
 
   root 'storefront#index'

@@ -20,8 +20,8 @@
         <td><%= item.product.name %></td>
         <td><%= item.quantity %> &time;</td>
         <td><%= number_to_currency(item.price) %></td>
-        <td><%= number_to_currency(item.total.price) %></td>
-        <td><%= link_to 'Destroy', admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= number_to_currency(item.total_price) %></td>
+        <td><%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
 
       </tr>
