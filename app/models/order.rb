@@ -1,8 +1,14 @@
 class Order < ApplicationRecord
   has_many :line_items, dependent: :destroy
   # if we destroy the order, we'll also destroy the line items.  or won't destroy an order if it has line items associated with it.  direct relationship b/t order and line items.
-
   belongs_to :user
+
+  validates :name, :address, :user_id, presence: true
+
+
+  PAYMENT_TYPES = ["Cash", "Check", "Paypal", "COD", "Wampum", "BitCoin"]
+
+  validates :pay_type, presence: true, inclusion: PAYMENT_TYPES
 
 
 end

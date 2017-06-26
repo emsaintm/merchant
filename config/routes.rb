@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'carts/edit'
+ 
 
   get '/shop' => 'storefront#index'
 
@@ -15,12 +15,14 @@ Rails.application.routes.draw do
   end
 
 
+
  resource :cart, only: [:edit, :update, :destroy]
  # resources gives you seven routes, resource gives you six.  difference is the index view
  #resources: index, new, create, edit, update, destroy, show
 #resource: new, create, edit, update, destroy, show
 
  resources :line_items, only: [:create]
+ resources :orders, only: [:new, :create, :show]
 
   root 'storefront#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
