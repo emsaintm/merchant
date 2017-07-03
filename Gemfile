@@ -42,6 +42,8 @@ gem 'annotate'
 gem 'paperclip', '~> 5.0.0'
 gem 'devise'
 gem 'will_paginate', '~> 3.1.0'
+gem 'figaro'
+
 
 
 
@@ -77,5 +79,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
   gem 'pg'
+  gem 'aws-sdk', '<2'
 end
 
