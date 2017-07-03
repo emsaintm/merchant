@@ -3,8 +3,10 @@ class LineItemsController < ApplicationController
   before_action :set_cart
 
   def require_admin
-    if !current_user.admin?
-      redirect_to 
+    unless current_user.admin?
+      redirect_to root_path
+    end
+  end
 
   def create 
      product = Product.find(params[:product_id])
