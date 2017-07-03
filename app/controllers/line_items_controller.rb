@@ -2,6 +2,10 @@ class LineItemsController < ApplicationController
   include CurrentCart 
   before_action :set_cart
 
+  def require_admin
+    if !current_user.admin?
+      redirect_to 
+
   def create 
      product = Product.find(params[:product_id])
      @line_item = @cart.add_product(product.id)

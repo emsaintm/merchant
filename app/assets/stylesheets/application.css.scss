@@ -32,7 +32,13 @@ p {
 
 body {
   font-family: "Georgia", Georgia, serif;
+  background-color: #f7f1e1;
+  background-image: url("https://www.transparenttextures.com/patterns/egg-shell.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
+
+
+
 
 
 
@@ -46,8 +52,8 @@ body {
 
 
 .jumbotron {
-  background-color: #edf099;
-  background-image: url("https://www.transparenttextures.com/patterns/diagonal-striped-brick.png");
+  background-color: white;
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 

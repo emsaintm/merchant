@@ -4,8 +4,8 @@
 
 
 <div class="jumbotron">
-  <h1>Welcome to e.claire</h1>
-  <p>handmade jewelry & accessories </p>
+  <h1>Shop Summer Sale</h1>
+  <p>handmade jewelry & accessories at 40% off </p>
 </div>
 
 
@@ -39,10 +39,10 @@
   <% @products.each do |product| %>
     <div class="col-sm-4">
       <div class="panel panel-default">
-        <div class="panel-body" style="max-height: 5">
+        <div class="panel-body" style="max-height: 3">
           <%= image_tag product.avatar.url(:medium) %>
           <span class="pull-right text-right">
-            <h5><%= product.price %></h5>
+            <h5><%= number_to_currency(product.price) %></h5>
             </span>
 
 
@@ -65,8 +65,6 @@
         </div>
 
 
-
-       
 
 
         <!-- Modal -->
