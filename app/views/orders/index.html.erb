@@ -1,0 +1,23 @@
+<h1>Your Orders</h1>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Order Number</th>
+      <th>Amount</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= order_id %></td>
+        <td><%= number_to_currency(@order.total) %></td>
+        <td><%= event('timetaken') %></td>
+    
+      </tr>
+    <% end %>
+  </tbody>
+</table>

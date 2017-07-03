@@ -2,6 +2,10 @@ class LineItemsController < ApplicationController
   include CurrentCart 
   before_action :set_cart
 
+  def require_admin
+    if !current_user.admin?
+      redirect_to 
+
   def create 
      product = Product.find(params[:product_id])
      @line_item = @cart.add_product(product.id)
@@ -12,7 +16,7 @@ class LineItemsController < ApplicationController
 
     else
       flash.now[:alert] = "Couldn't add the item to your cart."
-      redirect_to :back 
+      redirect_back(fallback_location: shop_path)
      end
    end
 

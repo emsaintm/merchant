@@ -38,9 +38,11 @@
 
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
+          <li><%= link_to 'Shopping Cart', edit_cart_path %></li>
           <li><%= link_to 'Account', edit_user_registration_path %></li>
           <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
         <% else %>
+          <li><%= link_to 'Shopping Cart', edit_cart_path %></li>
           <li><%= link_to 'Login', new_user_session_path %></li>
           <li><%= link_to 'Sign up', new_user_registration_path %></li>
         <% end %>

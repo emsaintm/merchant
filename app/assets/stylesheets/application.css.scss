@@ -32,9 +32,29 @@ p {
 
 body {
   font-family: "Georgia", Georgia, serif;
+  background-color: #f7f1e1;
+  background-image: url("https://www.transparenttextures.com/patterns/egg-shell.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 
-navbar-header navbar-brand {
-  max-width: 800px;
+
+
+
+
+#my-navbar {
+  line-height: 200px;
+  height: 200px;
+  padding-top: 30px;
+  background-color: white;
 }
+
+
+
+.jumbotron {
+  background-color: white;
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+
+
